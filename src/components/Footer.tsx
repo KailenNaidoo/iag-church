@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer() {
   return (
@@ -22,9 +23,10 @@ export default function Footer() {
             <p className="text-xs uppercase tracking-[0.15em] text-[var(--muted)] font-sans mb-4">
               International Assemblies of God
             </p>
-            <p className="text-sm text-[var(--muted)] leading-relaxed">
+            <p className="text-sm text-[var(--muted)] leading-relaxed mb-5">
               Building faith, community, and purpose together in the love of Christ.
             </p>
+            <SocialLinks />
           </div>
 
           {/* Quick Links */}
