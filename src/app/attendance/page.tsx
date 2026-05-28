@@ -4,12 +4,7 @@ import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 import PageTransition from "@/components/PageTransition";
 
-interface AttendanceRecord {
-  id: string;
-  name: string;
-  checkedInAt: string;
-  service: string;
-}
+interface AttendanceRecord { id: string; name: string; checkedInAt: string; service: string; }
 
 export default function AttendancePage() {
   const [view, setView] = useState<"checkin" | "register">("checkin");
@@ -17,7 +12,6 @@ export default function AttendancePage() {
   const [memberCode, setMemberCode] = useState("");
   const [selectedService, setSelectedService] = useState("sunday-morning");
   const [checkedIn, setCheckedIn] = useState(false);
-
   const [attendanceRecords, setAttendanceRecords] = useState<AttendanceRecord[]>([
     { id: "1", name: "John Smith", checkedInAt: "09:45 AM", service: "Sunday Morning" },
     { id: "2", name: "Mary Johnson", checkedInAt: "09:50 AM", service: "Sunday Morning" },
@@ -25,85 +19,63 @@ export default function AttendancePage() {
     { id: "4", name: "Sarah Brown", checkedInAt: "09:55 AM", service: "Sunday Morning" },
     { id: "5", name: "James Wilson", checkedInAt: "09:58 AM", service: "Sunday Morning" },
   ]);
-
   const services = [
     { value: "sunday-morning", label: "Sunday Morning Service" },
     { value: "wednesday-bible", label: "Wednesday Bible Study" },
     { value: "friday-youth", label: "Friday Youth Night" },
     { value: "special-event", label: "Special Event" },
   ];
-
   const handleCheckIn = (e: React.FormEvent) => {
     e.preventDefault();
-    const now = new Date();
-    const timeStr = now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: true }).toUpperCase();
+    const timeStr = new Date().toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: true }).toUpperCase();
     const serviceLabel = services.find(s => s.value === selectedService)?.label || selectedService;
-    const newRecord: AttendanceRecord = { id: Date.now().toString(), name: memberName, checkedInAt: timeStr, service: serviceLabel };
-    setAttendanceRecords([newRecord, ...attendanceRecords]);
+    setAttendanceRecords([{ id: Date.now().toString(), name: memberName, checkedInAt: timeStr, service: serviceLabel }, ...attendanceRecords]);
     setCheckedIn(true);
   };
-
-  const inputClass = "w-full p-4 border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] text-sm focus:border-[var(--purple)] focus:outline-none transition-colors";
+  const inputClass = "w-full p-4 border border-[var(--border-light)] bg-[var(--card-bg)] text-[var(--foreground)] text-sm focus:border-[var(--accent)] focus:outline-none transition-colors duration-500";
 
   return (
     <PageTransition>
-      {/* Hero */}
-      <section className="py-24 px-6 bg-gradient-to-b from-[#0c1a2e] via-[#1a3a5c] to-[#0c1a2e] text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-20 w-64 h-64 rounded-full bg-[var(--gold)] blur-[100px]" />
-        </div>
+      <section className="py-32 px-6 text-center relative overflow-hidden noise-bg">
+        <div className="absolute inset-0 bg-[var(--background)]" />
+        <div className="absolute inset-0"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] blur-[250px] opacity-[0.03]" /></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--gold-light)] font-sans font-semibold mb-4">Member Register</p>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Attendance</h1>
-          <p className="text-lg text-white/70 font-light max-w-2xl mx-auto">
-            Check in when you arrive. Leaders can view the live attendance register.
-          </p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-5">Member Register</p>
+          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6">Attendance</h1>
+          <p className="text-base text-[var(--muted-light)] font-light max-w-xl mx-auto">Check in when you arrive. Leaders view the live register.</p>
         </div>
       </section>
 
-      {/* Tab Navigation */}
-      <section className="border-b border-[var(--border)] bg-[var(--card-bg)]">
+      <section className="border-b border-[var(--border)] bg-[var(--background-secondary)]">
         <div className="max-w-4xl mx-auto flex">
-          <button onClick={() => setView("checkin")} className={`flex-1 py-5 text-center text-[11px] uppercase tracking-[0.2em] font-semibold transition-all duration-300 ${view === "checkin" ? "border-b-2 border-[var(--gold)] text-[var(--purple)]" : "text-[var(--muted)] hover:text-[var(--purple)]"}`}>Check In</button>
-          <button onClick={() => setView("register")} className={`flex-1 py-5 text-center text-[11px] uppercase tracking-[0.2em] font-semibold transition-all duration-300 ${view === "register" ? "border-b-2 border-[var(--gold)] text-[var(--purple)]" : "text-[var(--muted)] hover:text-[var(--purple)]"}`}>View Register</button>
+          {["checkin", "register"].map((tab) => (
+            <button key={tab} onClick={() => setView(tab as "checkin" | "register")} className={`flex-1 py-5 text-center text-[10px] uppercase tracking-[0.25em] font-medium transition-all duration-500 ${view === tab ? "text-[var(--accent)] border-b border-[var(--accent)]" : "text-[var(--muted)] hover:text-[var(--muted-light)]"}`}>{tab === "checkin" ? "Check In" : "Register"}</button>
+          ))}
         </div>
       </section>
 
-      {/* Check In View */}
       {view === "checkin" && (
-        <section className="py-24 px-6 bg-[var(--background)]">
+        <section className="py-28 px-6 bg-[var(--background)]">
           <div className="max-w-md mx-auto">
             <ScrollReveal>
               {checkedIn ? (
-                <div className="text-center p-16 border border-[var(--border)] bg-[var(--card-bg)]">
-                  <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[var(--gold)] to-[var(--gold-light)] rounded-full flex items-center justify-center text-white text-3xl shadow-lg shadow-[var(--gold)]/20">✓</div>
-                  <h2 className="text-2xl font-serif mb-3">You&apos;re Checked In</h2>
-                  <p className="text-[var(--muted)]">Welcome, <span className="text-[var(--purple)] font-medium">{memberName}</span>. Enjoy the service today.</p>
-                  <button onClick={() => { setCheckedIn(false); setMemberName(""); setMemberCode(""); }} className="mt-8 px-8 py-3 border border-[var(--purple)] text-[var(--purple)] text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[var(--purple)] hover:text-white transition-all duration-300">Check In Another Person</button>
+                <div className="text-center p-16 glass-card">
+                  <div className="w-16 h-16 mx-auto mb-6 border border-[var(--accent)] rounded-full flex items-center justify-center text-[var(--accent)] text-2xl">✓</div>
+                  <h2 className="text-2xl font-serif mb-3">Checked In</h2>
+                  <p className="text-[var(--muted)]">Welcome, <span className="text-[var(--accent)]">{memberName}</span>.</p>
+                  <button onClick={() => { setCheckedIn(false); setMemberName(""); setMemberCode(""); }} className="mt-8 px-8 py-3 border border-[var(--accent-dim)] text-[var(--accent)] text-[10px] uppercase tracking-[0.2em] font-medium hover:bg-[var(--accent)] hover:text-[var(--background)] transition-all duration-500">Check In Another</button>
                 </div>
               ) : (
-                <form onSubmit={handleCheckIn} className="space-y-8">
+                <form onSubmit={handleCheckIn} className="space-y-6">
                   <div className="text-center mb-8">
-                    <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[var(--purple)] to-[var(--purple-light)] text-white rounded-full flex items-center justify-center text-3xl mb-5 shadow-lg shadow-[var(--purple)]/20">📋</div>
-                    <h2 className="text-2xl font-serif">Service Check-In</h2>
-                    <p className="text-sm text-[var(--muted)] mt-2">Mark your attendance for today&apos;s service</p>
+                    <div className="w-16 h-16 mx-auto border border-[var(--accent-dim)] text-[var(--accent)] rounded-full flex items-center justify-center text-2xl mb-5">📋</div>
+                    <h2 className="text-2xl font-serif">Check In</h2>
+                    <p className="text-sm text-[var(--muted)] mt-2 font-light">Mark your attendance</p>
                   </div>
-                  <div>
-                    <label htmlFor="service" className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-3">Service *</label>
-                    <select id="service" value={selectedService} onChange={(e) => setSelectedService(e.target.value)} className={inputClass}>
-                      {services.map((service) => (<option key={service.value} value={service.value}>{service.label}</option>))}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="memberName" className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-3">Full Name *</label>
-                    <input id="memberName" type="text" required value={memberName} onChange={(e) => setMemberName(e.target.value)} placeholder="Enter your full name" className={`${inputClass} placeholder:text-[var(--muted)]`} />
-                  </div>
-                  <div>
-                    <label htmlFor="memberCode" className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-3">Member Code <span className="normal-case tracking-normal">(optional)</span></label>
-                    <input id="memberCode" type="text" value={memberCode} onChange={(e) => setMemberCode(e.target.value)} placeholder="e.g. IAG-001" className={`${inputClass} placeholder:text-[var(--muted)]`} />
-                    <p className="text-[11px] text-[var(--muted)] mt-2">If you have a member code, enter it for faster check-in.</p>
-                  </div>
-                  <button type="submit" className="w-full py-5 bg-[var(--purple)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--purple-light)] transition-all duration-300 shadow-lg shadow-[var(--purple)]/20">Check In</button>
+                  <div><label htmlFor="service" className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-3">Service *</label><select id="service" value={selectedService} onChange={(e) => setSelectedService(e.target.value)} className={inputClass}>{services.map((s) => (<option key={s.value} value={s.value}>{s.label}</option>))}</select></div>
+                  <div><label htmlFor="memberName" className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-3">Full Name *</label><input id="memberName" type="text" required value={memberName} onChange={(e) => setMemberName(e.target.value)} placeholder="Your name" className={`${inputClass} placeholder:text-[var(--muted)]`} /></div>
+                  <div><label htmlFor="memberCode" className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-3">Member Code</label><input id="memberCode" type="text" value={memberCode} onChange={(e) => setMemberCode(e.target.value)} placeholder="e.g. IAG-001" className={`${inputClass} placeholder:text-[var(--muted)]`} /></div>
+                  <button type="submit" className="w-full py-5 bg-[var(--accent)] text-[var(--background)] text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-[var(--accent-light)] transition-all duration-500">Check In</button>
                 </form>
               )}
             </ScrollReveal>
@@ -111,64 +83,35 @@ export default function AttendancePage() {
         </section>
       )}
 
-      {/* Register View */}
       {view === "register" && (
-        <section className="py-24 px-6 bg-[var(--background)]">
+        <section className="py-28 px-6 bg-[var(--background)]">
           <div className="max-w-5xl mx-auto">
             <ScrollReveal>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
-                <div className="p-8 border border-[var(--border)] bg-[var(--card-bg)] text-center">
-                  <p className="text-4xl font-serif text-[var(--purple)]">{attendanceRecords.length}</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2 font-semibold">Checked In Today</p>
-                </div>
-                <div className="p-8 border border-[var(--border)] bg-[var(--card-bg)] text-center">
-                  <p className="text-lg font-serif text-[var(--purple)]">Sunday Morning</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2 font-semibold">Current Service</p>
-                </div>
-                <div className="p-8 border border-[var(--border)] bg-[var(--card-bg)] text-center">
-                  <p className="text-lg font-serif text-[var(--purple)]">{new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</p>
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2 font-semibold">Date</p>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">
+                <div className="glass-card p-8 text-center"><p className="text-3xl font-serif text-[var(--accent)]">{attendanceRecords.length}</p><p className="text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2">Present</p></div>
+                <div className="glass-card p-8 text-center"><p className="text-base font-serif text-[var(--foreground)]">Sunday Morning</p><p className="text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2">Service</p></div>
+                <div className="glass-card p-8 text-center"><p className="text-base font-serif text-[var(--foreground)]">{new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" })}</p><p className="text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2">Date</p></div>
               </div>
             </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="border border-[var(--border)] bg-[var(--card-bg)]">
+            <ScrollReveal delay={0.15}>
+              <div className="glass-card overflow-hidden">
                 <div className="p-6 border-b border-[var(--border)] flex items-center justify-between">
-                  <h3 className="font-serif text-lg">Attendance Register</h3>
-                  <span className="text-[11px] uppercase tracking-[0.15em] text-[var(--muted)] font-semibold">{attendanceRecords.length} members present</span>
+                  <h3 className="font-serif text-lg">Register</h3>
+                  <span className="text-[9px] uppercase tracking-[0.2em] text-[var(--muted)]">{attendanceRecords.length} present</span>
                 </div>
-                <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="border-b border-[var(--border)]">
-                        <th className="text-left p-5 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold">#</th>
-                        <th className="text-left p-5 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold">Name</th>
-                        <th className="text-left p-5 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold">Time</th>
-                        <th className="text-left p-5 text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold">Service</th>
+                <table className="w-full">
+                  <thead><tr className="border-b border-[var(--border)]"><th className="text-left p-5 text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium">#</th><th className="text-left p-5 text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium">Name</th><th className="text-left p-5 text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium">Time</th><th className="text-left p-5 text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] font-medium hidden md:table-cell">Service</th></tr></thead>
+                  <tbody>
+                    {attendanceRecords.map((r, i) => (
+                      <tr key={r.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--card-bg-hover)] transition-colors">
+                        <td className="p-5 text-sm text-[var(--muted)]">{i + 1}</td>
+                        <td className="p-5 text-sm">{r.name}</td>
+                        <td className="p-5 text-sm text-[var(--muted)]">{r.checkedInAt}</td>
+                        <td className="p-5 text-sm text-[var(--muted)] hidden md:table-cell">{r.service}</td>
                       </tr>
-                    </thead>
-                    <tbody>
-                      {attendanceRecords.map((record, index) => (
-                        <tr key={record.id} className="border-b border-[var(--border)] last:border-b-0 hover:bg-[var(--highlight)] transition-colors">
-                          <td className="p-5 text-sm text-[var(--muted)]">{index + 1}</td>
-                          <td className="p-5 text-sm font-medium">{record.name}</td>
-                          <td className="p-5 text-sm text-[var(--muted)]">{record.checkedInAt}</td>
-                          <td className="p-5 text-sm text-[var(--muted)]">{record.service}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.3}>
-              <div className="mt-10 p-6 border border-[var(--border)] bg-[var(--highlight)]">
-                <p className="text-sm text-[var(--muted)] leading-relaxed">
-                  <span className="text-[10px] uppercase tracking-[0.15em] text-[var(--gold)] font-semibold">For Leaders</span><br />
-                  This register shows real-time attendance for the current service. Members check in using the &quot;Check In&quot; tab when they arrive. Historical attendance data can be exported for record-keeping.
-                </p>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </ScrollReveal>
           </div>

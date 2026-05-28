@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,7 +19,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="border-b border-[var(--border)] bg-[var(--background)]/90 backdrop-blur-xl sticky top-0 z-50">
+    <nav className="border-b border-[var(--border)] bg-[var(--background)]/80 backdrop-blur-xl sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -28,64 +27,45 @@ export default function Navbar() {
             <Image
               src="/logo.svg"
               alt="IAG - International Assemblies of God"
-              width={44}
-              height={52}
+              width={40}
+              height={48}
               className="transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:flex flex-col">
-              <span className="text-lg font-serif font-semibold text-[var(--purple)] leading-tight">IAG</span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-[var(--muted)] font-sans font-light leading-tight">
-                International Assemblies of God
+              <span className="text-base font-serif text-[var(--foreground)] leading-tight">IAG</span>
+              <span className="text-[9px] uppercase tracking-[0.25em] text-[var(--muted)] font-sans font-light leading-tight">
+                Assemblies of God
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-7">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[11px] uppercase tracking-[0.18em] font-medium text-[var(--warm-gray)] hover:text-[var(--purple)] transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[var(--gold)] after:transition-all after:duration-300 hover:after:w-full"
+                className="text-[11px] uppercase tracking-[0.2em] font-light text-[var(--muted-light)] hover:text-[var(--accent)] transition-colors duration-500"
               >
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex items-center gap-3 lg:hidden">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-[var(--warm-gray)] hover:text-[var(--purple)] transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-[var(--muted-light)] hover:text-[var(--accent)] transition-colors"
+            aria-label="Toggle navigation menu"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
 
         {/* Mobile Navigation */}
@@ -95,7 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block py-3 text-[11px] uppercase tracking-[0.18em] font-medium text-[var(--warm-gray)] hover:text-[var(--purple)] hover:pl-2 transition-all duration-300"
+                className="block py-3 text-[11px] uppercase tracking-[0.2em] font-light text-[var(--muted-light)] hover:text-[var(--accent)] hover:pl-2 transition-all duration-500"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

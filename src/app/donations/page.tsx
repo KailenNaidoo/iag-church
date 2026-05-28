@@ -12,113 +12,79 @@ export default function DonationsPage() {
   const [submitted, setSubmitted] = useState(false);
 
   const presetAmounts = ["10", "25", "50", "100", "250", "500"];
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+  const inputClass = "w-full p-4 border border-[var(--border-light)] bg-[var(--card-bg)] text-[var(--foreground)] text-sm focus:border-[var(--accent)] focus:outline-none transition-colors duration-500";
 
   return (
     <PageTransition>
-      {/* Hero */}
-      <section className="py-24 px-6 bg-gradient-to-b from-[#0c1a2e] via-[#1a3a5c] to-[#0c1a2e] text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute bottom-10 left-20 w-64 h-64 rounded-full bg-[var(--gold)] blur-[100px]" />
-        </div>
+      <section className="py-32 px-6 text-center relative overflow-hidden noise-bg">
+        <div className="absolute inset-0 bg-[var(--background)]" />
+        <div className="absolute inset-0"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] blur-[250px] opacity-[0.03]" /></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--gold-light)] font-sans font-semibold mb-4">Generosity</p>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Give</h1>
-          <p className="text-lg text-white/70 font-light max-w-2xl mx-auto">
-            Your generosity fuels the mission. Every gift makes an eternal difference.
-          </p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-5">Generosity</p>
+          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6">Give</h1>
+          <p className="text-base text-[var(--muted-light)] font-light max-w-xl mx-auto">Your generosity fuels the mission. Every gift makes an eternal difference.</p>
         </div>
       </section>
 
-      {/* Donation Form */}
-      <section className="py-24 px-6 bg-[var(--background)]">
-        <div className="max-w-2xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
+
+      <section className="py-28 px-6 bg-[var(--background)]">
+        <div className="max-w-xl mx-auto">
           <ScrollReveal>
             {submitted ? (
-              <div className="text-center p-16 border border-[var(--border)] bg-[var(--card-bg)]">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-[var(--gold)] to-[var(--gold-light)] rounded-full flex items-center justify-center text-white text-2xl">✓</div>
-                <h2 className="text-3xl font-serif mb-3">Thank You</h2>
-                <p className="text-[var(--muted)] leading-relaxed">
-                  Your generosity is a blessing. God loves a cheerful giver.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="mt-8 px-8 py-3 border border-[var(--purple)] text-[var(--purple)] text-xs uppercase tracking-[0.15em] font-semibold hover:bg-[var(--purple)] hover:text-white transition-all duration-300"
-                >
-                  Give Again
-                </button>
+              <div className="text-center p-16 glass-card">
+                <div className="w-14 h-14 mx-auto mb-6 border border-[var(--accent)] rounded-full flex items-center justify-center text-[var(--accent)] text-xl">✓</div>
+                <h2 className="text-2xl font-serif mb-3">Thank You</h2>
+                <p className="text-[var(--muted)] font-light">Your generosity is a blessing.</p>
+                <button onClick={() => setSubmitted(false)} className="mt-8 px-8 py-3 border border-[var(--accent-dim)] text-[var(--accent)] text-[10px] uppercase tracking-[0.2em] font-medium hover:bg-[var(--accent)] hover:text-[var(--background)] transition-all duration-500">Give Again</button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-10">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-4">Frequency</label>
-                  <div className="flex gap-4">
-                    <button type="button" onClick={() => setDonationType("one-time")} className={`flex-1 py-4 border text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300 ${donationType === "one-time" ? "bg-[var(--purple)] text-white border-[var(--purple)] shadow-lg shadow-[var(--purple)]/20" : "border-[var(--border)] text-[var(--warm-gray)] hover:border-[var(--purple)]/40"}`}>One-Time</button>
-                    <button type="button" onClick={() => setDonationType("recurring")} className={`flex-1 py-4 border text-xs uppercase tracking-[0.15em] font-semibold transition-all duration-300 ${donationType === "recurring" ? "bg-[var(--purple)] text-white border-[var(--purple)] shadow-lg shadow-[var(--purple)]/20" : "border-[var(--border)] text-[var(--warm-gray)] hover:border-[var(--purple)]/40"}`}>Monthly</button>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="category" className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-4">Giving Category</label>
-                  <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} className="w-full p-4 border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] text-sm focus:border-[var(--purple)] focus:outline-none transition-colors">
-                    <option value="general">General Fund</option>
-                    <option value="tithe">Tithes</option>
-                    <option value="offering">Offering</option>
-                    <option value="missions">Missions</option>
-                    <option value="building">Building Fund</option>
-                    <option value="youth">Youth Ministry</option>
-                    <option value="outreach">Community Outreach</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] font-semibold mb-4">Select Amount</label>
-                  <div className="grid grid-cols-3 gap-3 mb-4">
-                    {presetAmounts.map((preset) => (
-                      <button key={preset} type="button" onClick={() => { setAmount(preset); setCustomAmount(""); }} className={`py-4 border text-sm font-medium transition-all duration-300 ${amount === preset ? "bg-[var(--purple)] text-white border-[var(--purple)] shadow-lg shadow-[var(--purple)]/20" : "border-[var(--border)] text-[var(--warm-gray)] hover:border-[var(--purple)]/40"}`}>£{preset}</button>
+                  <label className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-4">Frequency</label>
+                  <div className="flex gap-3">
+                    {["one-time", "recurring"].map((type) => (
+                      <button key={type} type="button" onClick={() => setDonationType(type)} className={`flex-1 py-4 border text-[10px] uppercase tracking-[0.2em] font-medium transition-all duration-500 ${donationType === type ? "bg-[var(--accent)] text-[var(--background)] border-[var(--accent)]" : "border-[var(--border-light)] text-[var(--muted-light)] hover:border-[var(--accent-dim)]"}`}>{type === "one-time" ? "One-Time" : "Monthly"}</button>
                     ))}
                   </div>
-                  <label htmlFor="custom-amount" className="sr-only">Custom amount</label>
-                  <input id="custom-amount" type="number" placeholder="Enter custom amount (£)" value={customAmount} onChange={(e) => { setCustomAmount(e.target.value); setAmount(""); }} className="w-full p-4 border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] placeholder:text-[var(--muted)] text-sm focus:border-[var(--purple)] focus:outline-none transition-colors" min="1" />
                 </div>
-
-                <button type="submit" disabled={!amount && !customAmount} className="w-full py-5 bg-[var(--purple)] text-white text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[var(--purple-light)] transition-all duration-300 shadow-lg shadow-[var(--purple)]/20 disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none">
-                  Donate £{amount || customAmount || "0"} {donationType === "recurring" ? "Monthly" : ""}
-                </button>
-
-                <p className="text-[11px] text-[var(--muted)] text-center tracking-wide">
-                  Your donation is secure and encrypted. A confirmation will be sent to your email.
-                </p>
+                <div>
+                  <label htmlFor="category" className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-4">Category</label>
+                  <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} className={inputClass}>
+                    <option value="general">General Fund</option><option value="tithe">Tithes</option><option value="offering">Offering</option><option value="missions">Missions</option><option value="building">Building Fund</option><option value="youth">Youth Ministry</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-[9px] uppercase tracking-[0.3em] text-[var(--muted)] font-medium mb-4">Amount</label>
+                  <div className="grid grid-cols-3 gap-3 mb-4">
+                    {presetAmounts.map((p) => (
+                      <button key={p} type="button" onClick={() => { setAmount(p); setCustomAmount(""); }} className={`py-4 border text-sm transition-all duration-500 ${amount === p ? "bg-[var(--accent)] text-[var(--background)] border-[var(--accent)]" : "border-[var(--border-light)] text-[var(--muted-light)] hover:border-[var(--accent-dim)]"}`}>£{p}</button>
+                    ))}
+                  </div>
+                  <input type="number" placeholder="Custom amount (£)" value={customAmount} onChange={(e) => { setCustomAmount(e.target.value); setAmount(""); }} className={`${inputClass} placeholder:text-[var(--muted)]`} min="1" aria-label="Custom amount" />
+                </div>
+                <button type="submit" disabled={!amount && !customAmount} className="w-full py-5 bg-[var(--accent)] text-[var(--background)] text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-[var(--accent-light)] transition-all duration-500 disabled:opacity-30 disabled:cursor-not-allowed">Donate £{amount || customAmount || "0"}{donationType === "recurring" ? " Monthly" : ""}</button>
               </form>
             )}
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Why Give */}
-      <section className="py-24 px-6 bg-[var(--card-bg)]">
+      <section className="py-28 px-6 bg-[var(--background-secondary)]">
         <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[var(--gold)] font-sans font-semibold mb-4">Impact</p>
-              <h2 className="text-3xl md:text-4xl font-serif">Where Your Gift Goes</h2>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ScrollReveal><div className="text-center mb-16"><p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Impact</p><h2 className="text-3xl md:text-4xl font-serif">Where Your Gift Goes</h2></div></ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: "🏛", title: "Church Operations", desc: "Maintaining a welcoming space for worship, ministry, and community gatherings." },
-              { icon: "🌍", title: "Missions & Outreach", desc: "Supporting missionaries and community programmes locally and across the globe." },
-              { icon: "🌱", title: "Ministry Growth", desc: "Funding youth, counselling, discipleship, and leadership development programmes." },
+              { icon: "🏛", title: "Operations", desc: "Maintaining a welcoming space for worship and community." },
+              { icon: "🌍", title: "Missions", desc: "Supporting missionaries and outreach locally and globally." },
+              { icon: "🌱", title: "Growth", desc: "Funding youth, counselling, and leadership programmes." },
             ].map((item, i) => (
-              <ScrollReveal key={item.title} delay={i * 0.15}>
-                <div className="text-center p-8 border border-[var(--border)] bg-[var(--background)] hover:border-[var(--gold)]/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-500">
-                  <div className="text-3xl mb-4">{item.icon}</div>
+              <ScrollReveal key={item.title} delay={i * 0.12}>
+                <div className="glass-card p-8 text-center hover:border-[var(--accent)]/20 transition-all duration-700">
+                  <div className="text-2xl mb-4">{item.icon}</div>
                   <h3 className="font-serif text-lg mb-3">{item.title}</h3>
-                  <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[var(--muted)] font-light">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}

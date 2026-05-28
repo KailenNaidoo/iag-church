@@ -6,7 +6,7 @@ import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "IAG - International Assemblies of God",
-  description: "Welcome to the International Assemblies of God church. Join us in worship, fellowship, and community.",
+  description: "Welcome to the International Assemblies of God. A sanctuary of worship, fellowship, and spiritual transformation.",
 };
 
 export default function RootLayout({
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col">
+    <html lang="en" className="dark">
+      <body className="min-h-screen flex flex-col bg-[#0d0b0a]">
         <Navbar />
         <main className="flex-1">
           {children}

@@ -6,17 +6,10 @@ function getNextSunday10AM(): Date {
   const now = new Date();
   const next = new Date(now);
   const dayOfWeek = now.getDay();
-  
-  // Calculate days until next Sunday
   const daysUntilSunday = dayOfWeek === 0 ? 0 : 7 - dayOfWeek;
   next.setDate(now.getDate() + daysUntilSunday);
   next.setHours(10, 0, 0, 0);
-  
-  // If it's Sunday but past 10 AM, go to next Sunday
-  if (next <= now) {
-    next.setDate(next.getDate() + 7);
-  }
-  
+  if (next <= now) next.setDate(next.getDate() + 7);
   return next;
 }
 
@@ -25,14 +18,8 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     const update = () => {
-      const target = getNextSunday10AM();
-      const diff = target.getTime() - Date.now();
-      
-      if (diff <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
-
+      const diff = getNextSunday10AM().getTime() - Date.now();
+      if (diff <= 0) { setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 }); return; }
       setTimeLeft({
         days: Math.floor(diff / (1000 * 60 * 60 * 24)),
         hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
@@ -40,7 +27,6 @@ export default function CountdownTimer() {
         seconds: Math.floor((diff / 1000) % 60),
       });
     };
-
     update();
     const interval = setInterval(update, 1000);
     return () => clearInterval(interval);
@@ -49,22 +35,27 @@ export default function CountdownTimer() {
   const blocks = [
     { value: timeLeft.days, label: "Days" },
     { value: timeLeft.hours, label: "Hours" },
-    { value: timeLeft.minutes, label: "Minutes" },
-    { value: timeLeft.seconds, label: "Seconds" },
+    { value: timeLeft.minutes, label: "Min" },
+    { value: timeLeft.seconds, label: "Sec" },
   ];
 
   return (
-    <div className="flex items-center justify-center gap-4 md:gap-6">
-      {blocks.map((block) => (
-        <div key={block.label} className="text-center">
-          <div className="w-16 h-16 md:w-20 md:h-20 border border-[var(--border)] bg-[var(--card-bg)] flex items-center justify-center">
-            <span className="text-2xl md:text-3xl font-serif text-[var(--purple)]">
-              {String(block.value).padStart(2, "0")}
-            </span>
+    <div className="flex items-center justify-center gap-3 md:gap-5">
+      {blocks.map((block, i) => (
+        <div key={block.label} className="flex items-center gap-3 md:gap-5">
+          <div className="text-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 glass-card flex items-center justify-center">
+              <span className="text-2xl md:text-3xl font-serif text-[var(--foreground)] font-light">
+                {String(block.value).padStart(2, "0")}
+              </span>
+            </div>
+            <p className="text-[8px] uppercase tracking-[0.3em] text-[var(--muted)] mt-3 font-medium">
+              {block.label}
+            </p>
           </div>
-          <p className="text-[9px] uppercase tracking-[0.2em] text-[var(--muted)] mt-2 font-semibold">
-            {block.label}
-          </p>
+          {i < blocks.length - 1 && (
+            <span className="text-[var(--accent-dim)] text-lg font-light mb-5">:</span>
+          )}
         </div>
       ))}
     </div>
