@@ -19,10 +19,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden noise-bg">
         {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0b0a] via-[#141210] to-[#0d0b0a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14] via-[#0e1520] to-[#0a0e14]" />
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#c9a96e] blur-[250px] opacity-[0.04]" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#f5f0e8] blur-[200px] opacity-[0.02]" />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#7aacdf] blur-[250px] opacity-[0.04]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#e8edf5] blur-[200px] opacity-[0.02]" />
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
