@@ -3,27 +3,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --background-secondary: #f4f7fb;
-  --foreground: #1a2a3d;
-  --accent: #1e4a7a;
-  --accent-light: #2d6aaa;
-  --accent-dim: #3a7bc8;
-  --muted: #6b7d92;
-  --muted-light: #8a9bb0;
-  --border: #e2e8f0;
-  --border-light: #d0dae8;
-  --card-bg: #f8fafd;
-  --card-bg-hover: #eef3f9;
-  --glass: rgba(248, 250, 253, 0.8);
-  --glass-border: rgba(30, 74, 122, 0.1);
-  --purple: #1e4a7a;
-  --purple-light: #2d6aaa;
-  --gold: #1e4a7a;
-  --gold-light: #2d6aaa;
-  --warm-gray: #4a5e74;
-  --highlight: #eef3f9;
-  --soft-black: #1a2a3d;
+  --background: #0f1c2e;
+  --background-secondary: #132238;
+  --foreground: #e8eef6;
+  --accent: #5b9bd5;
+  --accent-light: #7db4e8;
+  --accent-dim: #3d7ab8;
+  --muted: #6e8499;
+  --muted-light: #9ab0c4;
+  --border: #1e3350;
+  --border-light: #264060;
+  --card-bg: #142640;
+  --card-bg-hover: #1a3050;
+  --glass: rgba(20, 38, 64, 0.75);
+  --glass-border: rgba(91, 155, 213, 0.12);
+  --purple: #5b9bd5;
+  --purple-light: #7db4e8;
+  --gold: #5b9bd5;
+  --gold-light: #7db4e8;
+  --warm-gray: #9ab0c4;
+  --highlight: #1a3050;
+  --soft-black: #e8eef6;
 }
 
 * {
@@ -55,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 ::-webkit-scrollbar {
@@ -78,7 +79,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.015;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
@@ -98,7 +99,7 @@ html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   .gold-gradient {
-    background: linear-gradient(135deg, #1e4a7a 0%, #3a7bc8 50%, #ffffff 100%);
+    background: linear-gradient(135deg, #5b9bd5 0%, #7db4e8 50%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
