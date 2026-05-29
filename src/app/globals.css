@@ -3,27 +3,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0c0e;
-  --background-secondary: #111114;
-  --foreground: #f0f0f2;
-  --accent: #4a8ec9;
-  --accent-light: #6aaae0;
-  --accent-dim: #3570a0;
-  --muted: #6a6a72;
-  --muted-light: #9a9aa4;
-  --border: #1e1e24;
-  --border-light: #2a2a32;
-  --card-bg: #121215;
-  --card-bg-hover: #18181c;
-  --glass: rgba(18, 18, 21, 0.75);
-  --glass-border: rgba(74, 142, 201, 0.08);
-  --purple: #4a8ec9;
-  --purple-light: #6aaae0;
-  --gold: #4a8ec9;
-  --gold-light: #6aaae0;
-  --warm-gray: #9a9aa4;
-  --highlight: #16161a;
-  --soft-black: #f0f0f2;
+  --background: #ffffff;
+  --background-secondary: #f7f9fc;
+  --foreground: #1b2e4a;
+  --accent: #1b4d8a;
+  --accent-light: #2a6bb5;
+  --accent-dim: #4a8ec9;
+  --muted: #6b7f96;
+  --muted-light: #8fa3b8;
+  --border: #e4eaf2;
+  --border-light: #d4dde8;
+  --card-bg: #f7f9fc;
+  --card-bg-hover: #eef3fa;
+  --glass: rgba(247, 249, 252, 0.85);
+  --glass-border: rgba(27, 77, 138, 0.08);
+  --purple: #1b4d8a;
+  --purple-light: #2a6bb5;
+  --gold: #1b4d8a;
+  --gold-light: #2a6bb5;
+  --warm-gray: #5a6e82;
+  --highlight: #eef3fa;
+  --soft-black: #1b2e4a;
 }
 
 * {
@@ -55,7 +55,6 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
 ::-webkit-scrollbar {
@@ -79,7 +78,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.02;
+  opacity: 0.01;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 1;
@@ -99,7 +98,7 @@ html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   .gold-gradient {
-    background: linear-gradient(135deg, #4a8ec9 0%, #6aaae0 50%, #f0f0f2 100%);
+    background: linear-gradient(135deg, #1b4d8a 0%, #4a8ec9 50%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -108,5 +107,6 @@ html {
     background: var(--glass);
     backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
+    box-shadow: 0 1px 3px rgba(27, 46, 74, 0.04);
   }
 }

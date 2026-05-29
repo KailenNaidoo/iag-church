@@ -14,18 +14,18 @@ export default function CounsellingPage() {
   return (
     <PageTransition>
       <section className="py-32 px-6 text-center relative overflow-hidden noise-bg">
-        <div className="absolute inset-0 bg-[var(--background)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#122a4a] via-[#1b4d8a] to-[#122a4a]" />
         <div className="absolute inset-0"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] blur-[250px] opacity-[0.03]" /></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-5">Pastoral Care</p>
-          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6">Counselling</h1>
-          <p className="text-base text-[var(--muted-light)] font-light max-w-xl mx-auto">You don&apos;t have to walk alone. Book a confidential session.</p>
+          <p className="text-[9px] uppercase tracking-[0.4em] text-white/70 font-sans font-medium mb-5">Pastoral Care</p>
+          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6 text-white">Counselling</h1>
+          <p className="text-base text-white/65 font-light max-w-xl mx-auto">You don&apos;t have to walk alone. Book a confidential session.</p>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
-      <section className="py-20 px-6 bg-[var(--background)]">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { icon: "🤝", title: "Confidential", desc: "What you share stays private." },
@@ -43,7 +43,7 @@ export default function CounsellingPage() {
         </div>
       </section>
 
-      <section className="py-28 px-6 bg-[var(--background-secondary)]">
+      <section className="py-28 px-6 bg-[#f7f9fc]">
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">

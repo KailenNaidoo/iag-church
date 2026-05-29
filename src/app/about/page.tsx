@@ -15,12 +15,12 @@ export default function AboutPage() {
     <PageTransition>
       {/* Hero */}
       <section className="py-32 px-6 text-center relative overflow-hidden noise-bg">
-        <div className="absolute inset-0 bg-[var(--background)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#122a4a] via-[#1b4d8a] to-[#122a4a]" />
         <div className="absolute inset-0"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[var(--accent)] blur-[250px] opacity-[0.03]" /></div>
         <div className="max-w-4xl mx-auto relative z-10">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-5">Who We Are</p>
-          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6">About Us</h1>
-          <p className="text-base text-[var(--muted-light)] font-light max-w-xl mx-auto">
+          <p className="text-[9px] uppercase tracking-[0.4em] text-white/70 font-sans font-medium mb-5">Who We Are</p>
+          <h1 className="text-4xl md:text-7xl font-serif font-normal mb-6 text-white">About Us</h1>
+          <p className="text-base text-white/65 font-light max-w-xl mx-auto">
             Discover our heart, our mission, and the people who make IAG a home.
           </p>
         </div>
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
       {/* Mission & Vision */}
-      <section className="py-28 px-6 bg-[var(--background)]">
+      <section className="py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
           <ScrollReveal direction="left">
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Our Purpose</p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
 
       {/* Beliefs */}
-      <section className="py-28 px-6 bg-[var(--background-secondary)]">
+      <section className="py-28 px-6 bg-[#f7f9fc]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -78,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-28 px-6 bg-[var(--background)]">
+      <section className="py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-28 px-6 bg-[var(--background-secondary)] border-t border-[var(--border)]">
+      <section className="py-28 px-6 bg-[#f7f9fc] border-t border-[var(--border)]">
         <ScrollReveal>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Our Journey</p>
