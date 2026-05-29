@@ -1,28 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
   <!-- Globe/Circle background -->
-  <circle cx="100" cy="140" r="60" fill="#0f1520" stroke="#7aacdf" stroke-width="2"/>
+  <circle cx="100" cy="140" r="60" fill="#1e4a7a" stroke="#ffffff" stroke-width="2"/>
   
   <!-- Horizontal ring of globe -->
-  <ellipse cx="100" cy="140" rx="60" ry="20" fill="none" stroke="#7aacdf" stroke-width="1.5" opacity="0.4"/>
+  <ellipse cx="100" cy="140" rx="60" ry="20" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.5"/>
   
   <!-- Vertical ring of globe -->
-  <ellipse cx="100" cy="140" rx="20" ry="60" fill="none" stroke="#7aacdf" stroke-width="1" opacity="0.3"/>
+  <ellipse cx="100" cy="140" rx="20" ry="60" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
   
   <!-- Cross -->
-  <rect x="91" y="12" width="18" height="95" rx="1" fill="#7aacdf"/>
-  <rect x="67" y="36" width="66" height="18" rx="1" fill="#7aacdf"/>
+  <rect x="91" y="12" width="18" height="95" rx="1" fill="#ffffff"/>
+  <rect x="67" y="36" width="66" height="18" rx="1" fill="#ffffff"/>
   
   <!-- Open Bible -->
-  <path d="M60 105 L100 115 L140 105 L140 130 L100 140 L60 130 Z" fill="#0f1520" stroke="#7aacdf" stroke-width="2"/>
-  <line x1="100" y1="115" x2="100" y2="140" stroke="#7aacdf" stroke-width="1" opacity="0.6"/>
+  <path d="M60 105 L100 115 L140 105 L140 130 L100 140 L60 130 Z" fill="#1e4a7a" stroke="#ffffff" stroke-width="2"/>
+  <line x1="100" y1="115" x2="100" y2="140" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
   <!-- Bible pages -->
-  <path d="M62 107 L98 116 L98 138 L62 128 Z" fill="#121a26" stroke="none"/>
-  <path d="M102 116 L138 107 L138 128 L102 138 Z" fill="#121a26" stroke="none"/>
+  <path d="M62 107 L98 116 L98 138 L62 128 Z" fill="#245a8e" stroke="none"/>
+  <path d="M102 116 L138 107 L138 128 L102 138 Z" fill="#245a8e" stroke="none"/>
   
   <!-- Text: INTERNATIONAL ASSEMBLIES OF GOD -->
-  <text x="100" y="160" text-anchor="middle" fill="#7aacdf" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" letter-spacing="1">INTERNATIONAL</text>
-  <text x="100" y="172" text-anchor="middle" fill="#7aacdf" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" letter-spacing="1">ASSEMBLIES OF GOD</text>
+  <text x="100" y="160" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" letter-spacing="1">INTERNATIONAL</text>
+  <text x="100" y="172" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="8.5" font-weight="bold" letter-spacing="1">ASSEMBLIES OF GOD</text>
   
   <!-- IAG text -->
-  <text x="100" y="198" text-anchor="middle" fill="#e8edf5" font-family="Arial, sans-serif" font-size="28" font-weight="bold" font-style="italic">IAG</text>
+  <text x="100" y="198" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold" font-style="italic">IAG</text>
 </svg>

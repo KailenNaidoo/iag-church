@@ -19,10 +19,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden noise-bg">
         {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e14] via-[#0e1520] to-[#0a0e14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1e4a7a] via-[#1a3d6b] to-[#15325a]" />
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#7aacdf] blur-[250px] opacity-[0.04]" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#e8edf5] blur-[200px] opacity-[0.02]" />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-white blur-[250px] opacity-[0.06]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#3a7bc8] blur-[200px] opacity-[0.08]" />
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-[10px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-6"
+            className="text-[10px] uppercase tracking-[0.4em] text-white/60 font-sans font-medium mb-6"
           >
             International Assemblies of God
           </motion.p>
@@ -53,7 +53,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-5xl md:text-8xl font-serif font-normal tracking-tight mb-8"
+            className="text-5xl md:text-8xl font-serif font-normal tracking-tight mb-8 text-white"
           >
             Where Faith<br />
             <span className="italic font-light">Meets Home</span>
@@ -63,7 +63,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-base md:text-lg font-light text-[var(--muted-light)] mb-14 max-w-xl mx-auto leading-relaxed"
+            className="text-base md:text-lg font-light text-white/70 mb-14 max-w-xl mx-auto leading-relaxed"
           >
             A sanctuary of worship, fellowship, and spiritual transformation.
           </motion.p>
@@ -76,13 +76,13 @@ export default function Home() {
           >
             <Link
               href="/connect"
-              className="px-10 py-4 bg-[var(--accent)] text-[var(--background)] font-sans text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-[var(--accent-light)] transition-all duration-500"
+              className="px-10 py-4 bg-white text-[var(--accent)] font-sans text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-white/90 transition-all duration-500"
             >
               Join Us
             </Link>
             <Link
               href="/live"
-              className="px-10 py-4 border border-[var(--border-light)] text-[var(--foreground)] font-sans text-[11px] uppercase tracking-[0.25em] font-light hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all duration-500"
+              className="px-10 py-4 border border-white/40 text-white font-sans text-[11px] uppercase tracking-[0.25em] font-light hover:bg-white/10 hover:border-white/70 transition-all duration-500"
             >
               Watch Live
             </Link>
@@ -96,7 +96,7 @@ export default function Home() {
           transition={{ delay: 2, duration: 1 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
-          <div className="w-px h-12 bg-gradient-to-b from-transparent via-[var(--accent-dim)] to-transparent animate-pulse" />
+          <div className="w-px h-12 bg-gradient-to-b from-transparent via-white/30 to-transparent animate-pulse" />
         </motion.div>
       </section>
 
