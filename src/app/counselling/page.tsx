@@ -25,7 +25,7 @@ export default function CounsellingPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-[#f0f2f5]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { icon: "🤝", title: "Confidential", desc: "What you share stays private." },
@@ -43,7 +43,7 @@ export default function CounsellingPage() {
         </div>
       </section>
 
-      <section className="py-28 px-6 bg-[#f7f9fc]">
+      <section className="py-28 px-6 bg-[#e8ecf1]">
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">

@@ -21,7 +21,7 @@ export default function Home() {
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#122a4a] via-[#1b4d8a] to-[#122a4a]" />
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-white blur-[280px] opacity-[0.06]" />
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full bg-[#f0f2f5] blur-[280px] opacity-[0.06]" />
           <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-[#4a8ec9] blur-[220px] opacity-[0.08]" />
         </div>
         
@@ -76,13 +76,13 @@ export default function Home() {
           >
             <Link
               href="/connect"
-              className="px-10 py-4 bg-white text-[var(--accent)] font-sans text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-white/90 transition-all duration-500 shadow-lg shadow-white/10"
+              className="px-10 py-4 bg-[#f0f2f5] text-[var(--accent)] font-sans text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-[#f0f2f5]/90 transition-all duration-500 shadow-lg shadow-white/10"
             >
               Join Us
             </Link>
             <Link
               href="/live"
-              className="px-10 py-4 border border-white/30 text-white font-sans text-[11px] uppercase tracking-[0.25em] font-light hover:bg-white/10 hover:border-white/60 transition-all duration-500"
+              className="px-10 py-4 border border-white/30 text-white font-sans text-[11px] uppercase tracking-[0.25em] font-light hover:bg-[#f0f2f5]/10 hover:border-white/60 transition-all duration-500"
             >
               Watch Live
             </Link>
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Countdown */}
-      <section className="py-20 px-6 bg-white border-t border-[var(--border)]">
+      <section className="py-20 px-6 bg-[#f0f2f5] border-t border-[var(--border)]">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-6">Next Sunday Service</p>
@@ -116,7 +116,7 @@ export default function Home() {
       </div>
 
       {/* Service Times */}
-      <section className="py-28 px-6 bg-white noise-bg">
+      <section className="py-28 px-6 bg-[#f0f2f5] noise-bg">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <ScrollReveal>
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Gather With Us</p>
@@ -141,7 +141,7 @@ export default function Home() {
       </section>
 
       {/* Quick Links */}
-      <section className="py-28 px-6 bg-[#f7f9fc]">
+      <section className="py-28 px-6 bg-[#e8ecf1]">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -172,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-28 px-6 bg-white noise-bg">
+      <section className="py-28 px-6 bg-[#f0f2f5] noise-bg">
         <div className="max-w-5xl mx-auto relative z-10">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* Welcome CTA */}
-      <section className="py-32 px-6 bg-[#f7f9fc] relative overflow-hidden">
+      <section className="py-32 px-6 bg-[#e8ecf1] relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[var(--accent)] blur-[300px] opacity-[0.03]" />
         </div>
@@ -224,7 +224,7 @@ export default function Home() {
       </section>
 
       {/* Scripture */}
-      <section className="py-24 px-6 bg-white border-t border-[var(--border)]">
+      <section className="py-24 px-6 bg-[#f0f2f5] border-t border-[var(--border)]">
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-xl md:text-2xl font-display italic font-light leading-relaxed text-[var(--muted-light)]">

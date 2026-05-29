@@ -46,7 +46,7 @@ export default function AttendancePage() {
         </div>
       </section>
 
-      <section className="border-b border-[var(--border)] bg-[#f7f9fc]">
+      <section className="border-b border-[var(--border)] bg-[#e8ecf1]">
         <div className="max-w-4xl mx-auto flex">
           {["checkin", "register"].map((tab) => (
             <button key={tab} onClick={() => setView(tab as "checkin" | "register")} className={`flex-1 py-5 text-center text-[10px] uppercase tracking-[0.25em] font-medium transition-all duration-500 ${view === tab ? "text-[var(--accent)] border-b border-[var(--accent)]" : "text-[var(--muted)] hover:text-[var(--muted-light)]"}`}>{tab === "checkin" ? "Check In" : "Register"}</button>
@@ -55,7 +55,7 @@ export default function AttendancePage() {
       </section>
 
       {view === "checkin" && (
-        <section className="py-28 px-6 bg-white">
+        <section className="py-28 px-6 bg-[#f0f2f5]">
           <div className="max-w-md mx-auto">
             <ScrollReveal>
               {checkedIn ? (
@@ -84,7 +84,7 @@ export default function AttendancePage() {
       )}
 
       {view === "register" && (
-        <section className="py-28 px-6 bg-white">
+        <section className="py-28 px-6 bg-[#f0f2f5]">
           <div className="max-w-5xl mx-auto">
             <ScrollReveal>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14">

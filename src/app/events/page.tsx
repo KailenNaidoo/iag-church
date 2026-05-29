@@ -30,7 +30,7 @@ export default function EventsPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
-      <section className="py-28 px-6 bg-white">
+      <section className="py-28 px-6 bg-[#f0f2f5]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal><p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Every Week</p><h2 className="text-3xl font-serif mb-14">Weekly Services</h2></ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -49,7 +49,7 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="py-28 px-6 bg-[#f7f9fc]">
+      <section className="py-28 px-6 bg-[#e8ecf1]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal><p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Mark Your Calendar</p><h2 className="text-3xl font-serif mb-14">Upcoming</h2></ScrollReveal>
           <div className="space-y-4">

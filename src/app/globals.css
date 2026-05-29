@@ -3,8 +3,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --background-secondary: #f7f9fc;
+  --background: #f0f2f5;
+  --background-secondary: #e8ecf1;
   --foreground: #1b2e4a;
   --accent: #1b4d8a;
   --accent-light: #2a6bb5;
@@ -13,16 +13,16 @@
   --muted-light: #8fa3b8;
   --border: #e4eaf2;
   --border-light: #d4dde8;
-  --card-bg: #f7f9fc;
-  --card-bg-hover: #eef3fa;
-  --glass: rgba(247, 249, 252, 0.85);
+  --card-bg: #eaeff4;
+  --card-bg-hover: #e2e8f0;
+  --glass: rgba(234, 239, 244, 0.85);
   --glass-border: rgba(27, 77, 138, 0.08);
   --purple: #1b4d8a;
   --purple-light: #2a6bb5;
   --gold: #1b4d8a;
   --gold-light: #2a6bb5;
   --warm-gray: #5a6e82;
-  --highlight: #eef3fa;
+  --highlight: #e2e8f0;
   --soft-black: #1b2e4a;
 }
 

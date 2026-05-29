@@ -29,7 +29,7 @@ export default function DonationsPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
-      <section className="py-28 px-6 bg-white">
+      <section className="py-28 px-6 bg-[#f0f2f5]">
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             {submitted ? (
@@ -71,7 +71,7 @@ export default function DonationsPage() {
         </div>
       </section>
 
-      <section className="py-28 px-6 bg-[#f7f9fc]">
+      <section className="py-28 px-6 bg-[#e8ecf1]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal><div className="text-center mb-16"><p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Impact</p><h2 className="text-3xl md:text-4xl font-serif">Where Your Gift Goes</h2></div></ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

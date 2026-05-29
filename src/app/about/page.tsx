@@ -29,7 +29,7 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
       {/* Mission & Vision */}
-      <section className="py-28 px-6 bg-white">
+      <section className="py-28 px-6 bg-[#f0f2f5]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
           <ScrollReveal direction="left">
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Our Purpose</p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
       </section>
 
       {/* Beliefs */}
-      <section className="py-28 px-6 bg-[#f7f9fc]">
+      <section className="py-28 px-6 bg-[#e8ecf1]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -78,7 +78,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership */}
-      <section className="py-28 px-6 bg-white">
+      <section className="py-28 px-6 bg-[#f0f2f5]">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -104,7 +104,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-28 px-6 bg-[#f7f9fc] border-t border-[var(--border)]">
+      <section className="py-28 px-6 bg-[#e8ecf1] border-t border-[var(--border)]">
         <ScrollReveal>
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[9px] uppercase tracking-[0.4em] text-[var(--accent)] font-sans font-medium mb-4">Our Journey</p>

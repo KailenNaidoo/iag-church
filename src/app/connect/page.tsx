@@ -27,7 +27,7 @@ export default function ConnectPage() {
 
       <div className="max-w-7xl mx-auto px-6"><div className="h-px bg-gradient-to-r from-transparent via-[var(--accent-dim)] to-transparent" /></div>
 
-      <section className="py-28 px-6 bg-white">
+      <section className="py-28 px-6 bg-[#f0f2f5]">
         <div className="max-w-xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-12">
