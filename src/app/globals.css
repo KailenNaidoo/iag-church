@@ -3,27 +3,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f1c2e;
-  --background-secondary: #132238;
-  --foreground: #e8eef6;
-  --accent: #5b9bd5;
-  --accent-light: #7db4e8;
-  --accent-dim: #3d7ab8;
-  --muted: #6e8499;
-  --muted-light: #9ab0c4;
-  --border: #1e3350;
-  --border-light: #264060;
-  --card-bg: #142640;
-  --card-bg-hover: #1a3050;
-  --glass: rgba(20, 38, 64, 0.75);
-  --glass-border: rgba(91, 155, 213, 0.12);
-  --purple: #5b9bd5;
-  --purple-light: #7db4e8;
-  --gold: #5b9bd5;
-  --gold-light: #7db4e8;
-  --warm-gray: #9ab0c4;
-  --highlight: #1a3050;
-  --soft-black: #e8eef6;
+  --background: #0c0c0e;
+  --background-secondary: #111114;
+  --foreground: #f0f0f2;
+  --accent: #4a8ec9;
+  --accent-light: #6aaae0;
+  --accent-dim: #3570a0;
+  --muted: #6a6a72;
+  --muted-light: #9a9aa4;
+  --border: #1e1e24;
+  --border-light: #2a2a32;
+  --card-bg: #121215;
+  --card-bg-hover: #18181c;
+  --glass: rgba(18, 18, 21, 0.75);
+  --glass-border: rgba(74, 142, 201, 0.08);
+  --purple: #4a8ec9;
+  --purple-light: #6aaae0;
+  --gold: #4a8ec9;
+  --gold-light: #6aaae0;
+  --warm-gray: #9a9aa4;
+  --highlight: #16161a;
+  --soft-black: #f0f0f2;
 }
 
 * {
@@ -99,7 +99,7 @@ html {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
   .gold-gradient {
-    background: linear-gradient(135deg, #5b9bd5 0%, #7db4e8 50%, #ffffff 100%);
+    background: linear-gradient(135deg, #4a8ec9 0%, #6aaae0 50%, #f0f0f2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
