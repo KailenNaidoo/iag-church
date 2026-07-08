@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import BackToTop from "@/components/BackToTop";
+import SiteChrome from "@/components/SiteChrome";
 
 export const metadata: Metadata = {
   title: "IAG - International Assemblies of God",
@@ -17,12 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-[#f0f2f5]">
-        <Navbar />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <BackToTop />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

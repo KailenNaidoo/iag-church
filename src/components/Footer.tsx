@@ -70,9 +70,14 @@ export default function Footer() {
           <p className="text-[10px] text-[var(--muted)] tracking-wider">
             &copy; {new Date().getFullYear()} International Assemblies of God
           </p>
-          <p className="text-[11px] text-[var(--muted)] italic font-serif">
-            &ldquo;For where two or three gather in my name, there am I with them.&rdquo;
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/dashboard" className="text-[10px] uppercase tracking-[0.2em] text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
+              Admin
+            </Link>
+            <p className="text-[11px] text-[var(--muted)] italic font-serif">
+              &ldquo;For where two or three gather in my name, there am I with them.&rdquo;
+            </p>
+          </div>
         </div>
       </div>
     </footer>
