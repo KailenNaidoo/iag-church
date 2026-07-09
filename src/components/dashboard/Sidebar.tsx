@@ -43,7 +43,9 @@ export default function Sidebar() {
         {/* Logo */}
         <div className="p-6 border-b border-white/10">
           <Link href="/dashboard" className="flex items-center gap-3">
-            <Image src="/logo.svg" alt="IAG" width={36} height={44} />
+            <span className="bg-white rounded-lg p-1 flex items-center justify-center">
+              <Image src="/logo.png" alt="IAG" width={32} height={35} />
+            </span>
             <div>
               <p className="font-serif text-lg leading-none">IAG</p>
               <p className="text-[9px] uppercase tracking-[0.2em] text-white/50 mt-1">Dashboard</p>

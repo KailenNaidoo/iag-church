@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-5">
-              <Image src="/logo.svg" alt="IAG Logo" width={32} height={40} />
+              <Image src="/logo.png" alt="IAG Logo" width={36} height={40} />
               <span className="text-lg font-serif text-[var(--foreground)]">IAG</span>
             </div>
             <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--muted)] font-sans mb-4">

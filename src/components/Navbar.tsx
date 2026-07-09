@@ -25,9 +25,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="IAG - International Assemblies of God"
-              width={40}
+              width={44}
               height={48}
               className="transition-transform duration-300 group-hover:scale-105"
             />

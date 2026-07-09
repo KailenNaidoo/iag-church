@@ -31,13 +31,15 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <Image
-              src="/logo.svg"
-              alt="IAG Logo"
-              width={100}
-              height={120}
-              className="mx-auto mb-10 opacity-90"
-            />
+            <span className="inline-block bg-white rounded-2xl p-4 mb-10 shadow-2xl shadow-black/20">
+              <Image
+                src="/logo.png"
+                alt="IAG Logo"
+                width={120}
+                height={131}
+                className="mx-auto"
+              />
+            </span>
           </motion.div>
           
           <motion.p
